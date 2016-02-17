@@ -5,11 +5,27 @@ var projects = require('../projects.json');
  */
 
 exports.view = function(req, res){
-  	res.render('index', projects);
-    projects['grid'] = false;
+    var rand = Math.random();
+    console.log(rand);
+    
+    if(rand > .5) {
+        projects['grid'] = false;
+        res.render('index', projects);
+    }
+    else {
+        res.redirect('/grid');
+    }
 };
 
 exports.viewGrid = function(req, res) {
-    res.render('index', projects);
-    projects['grid'] = true;
+    var rand = Math.random();
+    console.log(rand);
+    
+    if(rand > .5) {
+        projects['grid'] = true;
+        res.render('index', projects);
+    }
+    else {
+        res.redirect('/');
+    }
 };

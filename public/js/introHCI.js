@@ -10,7 +10,6 @@ $(document).ready(function() {
  */
 function initializePage() {
 	// your code here
-    console.log('1');
     $('button').click(function() {
         console.log('here');
         ga("send", "event", 'like', 'click');
